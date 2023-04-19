@@ -7,12 +7,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MasoudNiki\\OutlineSDK\\": "src/"
+            "MasoudNiki\\OutlineSDK\\": "./src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MasoudNiki\\Tests\\": "tests/"
+            "MasoudNiki\\OutlineSDKTests\\": "tests/"
         }
     },
     "authors": [
