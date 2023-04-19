@@ -19,7 +19,7 @@ class LimitTest extends TestCase
         $this->mockHandler->append(new Response(204,[]));
         $response=$this->limit->setDataTransferLimitForAllAccessKeys(25000);
         $this->assertLastRequestEquals("PUT","/server/access-key-data-limit");
-        $this->assertLastRequestBody(json_encode(file_get_contents(__DIR__."/fixtures/set_limit_on_all_access_keys_request.json")));
+        $this->assertLastRequestBody(json_decode(file_get_contents(__DIR__."/fixtures/set_limit_on_all_access_keys_request.json")));
     }
 
 }
