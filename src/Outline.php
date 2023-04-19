@@ -13,16 +13,25 @@ class Outline
         ?Client $client=null
     ){
         if(!$client){
-            $this->client=$client;
+            $this->client=new Client(
+                [
+                    'base_uri'=>$this->secretPath
+                ]);
         }
     }
-    public function server(){
+    public function getClient():Client{
+        return $this->client;
+    }
+    public function setClient(Client $client):void{
+        $this->client=$client;
+    }
+    public function server():Server{
         return new Server($this->client);
     }
-    public function accessKeys(){
+    public function accessKeys():AccessKey{
         return new AccessKey($this->client);
     }
-    public function limit(){
+    public function limit():Limit{
         return new Limit($this->client);
     }
 }

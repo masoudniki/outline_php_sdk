@@ -7,7 +7,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MasoudNiki\\OutlineSDK\\": "./src/"
+            "MasoudNiki\\OutlineSDK\\": "src/"
         }
     },
     "autoload-dev": {
