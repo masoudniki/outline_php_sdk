@@ -1,0 +1,9 @@
+{
+  "name": "Outline Server",
+  "serverId": "f58aa2a6-48e7-417c-8d09-d26945906b6b",
+  "metricsEnabled": false,
+  "createdTimestampMs": 1681910259000,
+  "version": "1.7.2",
+  "portForNewAccessKeys": 54541,
+  "hostnameForAccessKeys": "217.218.32.91"
+}

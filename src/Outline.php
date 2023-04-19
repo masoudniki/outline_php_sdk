@@ -7,10 +7,10 @@ use MasoudNiki\OutlineSDK\Domains\Limit\Limit;
 
 class Outline
 {
-    private Client $client;
+    public Client $client;
     public function __construct(
         public string $secretPath,
-        ?Client $client=null
+        Client $client=null
     ){
         if(!$client){
             $this->client=new Client(

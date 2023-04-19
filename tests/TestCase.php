@@ -13,13 +13,10 @@ class TestCase extends \PHPUnit\Framework\TestCase
     public function setUp(): void
     {
          $this->mockHandler=new MockHandler();
-         $this->outlineApiClient=new Outline("https://127.0.0.1:6970/some_secret_path",new Client(['handler'=>$this->mockHandler]));
+         $this->outlineApiClient=new Outline("https://127.0.0.1:6970/some_secret_path");
+         $this->outlineApiClient->setClient(new Client(['handler'=>$this->mockHandler]));
     }
-    public function tearDown(): void
-    {
-        $this->mockHandler->reset();
-        parent::tearDown();
-    }
+
     public function assertLastRequestEquals($method, $urlFragment)
     {
         $this->assertEquals($this->mockHandler->getLastRequest()->getMethod(), $method);
@@ -35,5 +32,10 @@ class TestCase extends \PHPUnit\Framework\TestCase
     }
     public function assertLastRequestBody($body){
         $this->assertEquals((string)$this->mockHandler->getLastRequest()->getBody(),json_encode($body));
+    }
+    public function tearDown(): void
+    {
+        $this->mockHandler->reset();
+        parent::tearDown();
     }
 }
