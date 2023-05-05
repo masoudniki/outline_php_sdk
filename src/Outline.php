@@ -19,6 +19,8 @@ class Outline
                     'base_uri'=>$this->secretPath
                 ]+$config
             );
+        }else{
+            $this->client=$client;
         }
     }
     public function getClient():Client{
