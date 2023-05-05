@@ -10,13 +10,15 @@ class Outline
     public Client $client;
     public function __construct(
         public string $secretPath,
+        array $config=[],
         Client $client=null
     ){
         if(!$client){
             $this->client=new Client(
                 [
                     'base_uri'=>$this->secretPath
-                ]);
+                ]+$config
+            );
         }
     }
     public function getClient():Client{

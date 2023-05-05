@@ -1,5 +1,5 @@
 {
-    "name": "masoud/outline_sdk",
+    "name": "masoudniki/outline_sdk",
     "require": {
         "guzzlehttp/guzzle": "^7.5",
         "larapack/dd": "^1.1",
