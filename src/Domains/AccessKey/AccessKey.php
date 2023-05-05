@@ -39,6 +39,9 @@ class AccessKey
             ]
         ]);
     }
+    public function dataTransfer(){
+        return $this->client->get("metrics/transfer");
+    }
 
 
 
