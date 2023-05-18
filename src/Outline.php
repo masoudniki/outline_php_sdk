@@ -16,7 +16,7 @@ class Outline
         if(!$client){
             $this->client=new Client(
                 [
-                    'base_uri'=>$this->secretPath
+                    'base_uri'=>rtrim($this->secretPath,"\/\t\n\r\0\x0B")."/"
                 ]+$config
             );
         }else{
